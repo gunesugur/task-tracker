@@ -1,38 +1,113 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app-container{
+    font-family: 'Poppins', sans-serif;
+    background-color:rgba(0, 0, 0, 0.7);
+    margin:0 auto;
+    max-width:30vw;
+    min-height:100vh;
+    overflow: auto;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.header-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
 }
-
-.App-link {
-  color: #61dafb;
+.title{
+    color:#80ffdb;
+    margin-top:50px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.on-off-btn{
+    font-size:1.3rem;
+    cursor:pointer;
+    border:none;
+    border-radius:3px;
+    padding:5px 20px;
+    margin-top:30px;
+}
+.on-off-btn:hover{
+    transition: all 200ms ease-in-out;
+    transform:translateY(-2px);
+}
+.on-off-btn:active{
+    transition: all 200ms;
+    transform:translateY(2px);
+}
+.item-lists{
+    background-color:#000000;
+    margin:30px;
+    padding:30px 20px;
+    list-style-type:none;
+    cursor:pointer;
+    border-radius:5px;
+    display: flex;
+    justify-content: space-between;
+}
+.item-title{
+    color:#80ffdb;
+    margin-bottom:10px;
+}
+.item-paragraph{
+    color:#f72585;
+}
+.delete-icon{
+    color:#f94144;
+    cursor:pointer;
+}
+.content-div{
+    /* border:1px solid; */
+    display: flex;
+    flex-direction:column;
+    flex-wrap: wrap;
+    word-break: break-all;
+    padding:20px;
+}
+.delete-icon-div{
+    /* border:1px solid; */
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+}
+.create-task-form{
+    display: flex;flex-direction: column;
+    margin: 30px;
+}
+.text-label, .date-label{
+    font-size:1.4rem;
+    color:#fff;
+    cursor: pointer;
+}
+.text-input, .date-input{
+    font-size:1.4rem;
+    color:#f72585;
+    outline:none;
+    border:none;
+    border-radius:2px;
+    padding:10px;
+}
+.date-input{
+    /* color:rgba(0, 0, 0, 0.5); */
+    color:#f72585;
+}
+.form-submit-btn{
+    padding:10px 0px;
+    font-size:1.1rem;
+    cursor: pointer;
+    background-color: #00ffe6;
+    color:#008276;
+    outline:none;
+    border:none;
+    border-radius:2px;
+}
+.form-submit-btn:hover{
+    background-color: #008276;
+    color:#00ffe6;
+    transition: all 200ms ease;
+    box-shadow: 0px 0px 10px 2px rgba(0, 255, 230, 1);
 }

@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header"
+import TaskList from "./components/TaskList"
+import CreateTask from "./components/CreateTask"
+import { useState } from 'react'
+import { initialState } from './components/store/InitialState'
+import "./App.css"
+const App = () => {
+  const [tasks, setTasks] = useState(initialState)
+  const [isTaskBarShowed, setIsTaskBarShowed] = useState(false)
 
-function App() {
+  // Create a task
+  const onCreate = (task) => {
+    const id = Date.now();
+    const newTask = { id, ...task }
+    setTasks((prevState) => [...prevState, newTask])
+  }
+  // Delete a task
+  const onDelete = (deletedItemID) => setTasks(tasks.filter((task) => task.id !== deletedItemID))
+
+  // Toggle Done
+
+  // Toggle Show and Tide
+  const toggleShow = () => setIsTaskBarShowed(prevState => !prevState)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <Header title={"Task Tracker"} isTaskBarShowed={isTaskBarShowed} toggleShow={toggleShow}/>
+      {isTaskBarShowed && <CreateTask onCreate={onCreate}/>}
+      <TaskList tasks={tasks} onDelete={onDelete} />
     </div>
-  );
-}
-
-export default App;
+  )
+  }
+  export default App
